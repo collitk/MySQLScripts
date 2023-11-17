@@ -15,8 +15,8 @@ esac
 # Function to generate a random password with a length of 12
 generate_random_password() {
     #< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c"${1:-12}"
-    tr -dc '_[:alnum:]' < /dev/urandom | head -c"${1:-12}"
-    echo
+        tr -dc '_[:alnum:]' < /dev/urandom | head -c"${1:-12}"
+        LC_ALL=C tr -dc 'A-Za-z0-9' </dev/urandom | head -c 12 ; echo
 }
 # Attempt to help the executor, who should be executed if he is the author
 clhelp () {
